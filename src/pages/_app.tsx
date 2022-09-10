@@ -1,6 +1,7 @@
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import type { AppProps } from "next/app";
 import PageContainer from "../components/PageContainer";
+import { ThreeHeader } from "../components/ThreeHeader";
 import "../styles/globals.css";
 
 const theme = createTheme({

@@ -12,14 +12,20 @@
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "@mui/material": "^5.10.2",
+    "animejs": "^3.2.1",
+    "lil-gui": "^0.17.0",
     "next": "12.2.5",
+    "raw-loader": "^4.0.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "three": "^0.144.0"
   },
   "devDependencies": {
+    "@types/animejs": "^3.1.5",
     "@types/node": "18.7.11",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
+    "@types/three": "^0.144.0",
     "@typescript-eslint/eslint-plugin": "^5.30.5",
     "@typescript-eslint/parser": "^5.30.5",
     "autoprefixer": "^10.4.7",
