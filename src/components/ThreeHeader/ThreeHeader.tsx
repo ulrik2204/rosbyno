@@ -22,12 +22,18 @@ import styles from "./ThreeHeader.module.css";
  *
  */
 
-export class ThreeHeader extends React.Component {
+export class ThreeHeader extends React.Component<{}, { isMouseOverCanvas: boolean }> {
+  constructor(props: {}) {
+    super(props);
+    this.state = {
+      isMouseOverCanvas: false,
+    };
+  }
   scene = new THREE.Scene();
   renderer: THREE.WebGLRenderer | null = null;
   sizes = {
     width: typeof window !== "undefined" ? window.innerWidth : 1920,
-    height: 500,
+    height: 600,
   };
   camera = new THREE.PerspectiveCamera(60, this.sizes.width / this.sizes.height, 0.01, 1500);
   clock = new THREE.Clock();
@@ -163,6 +169,7 @@ export class ThreeHeader extends React.Component {
     if (this.renderer) {
       this.renderer.setSize(this.sizes.width, this.sizes.height);
       this.renderer.setClearColor(new THREE.Color("#C1EFFF"));
+      // this.renderer.setClearColor(new THREE.Color("#FFFFFF"));
     }
     this.scene.add(mesh);
     this.scene.add(mesh2);
@@ -229,6 +236,10 @@ export class ThreeHeader extends React.Component {
     window.addEventListener("mousemove", this.handleMouseMove.bind(this));
     window.addEventListener("touchmove", this.handleTouchMove.bind(this));
   }
+  componentDidUpdate(prevProps: Readonly<{}>, prevState: Readonly<{}>, snapshot?: any): void {
+    console.log("Hello");
+    console.log(this.state);
+  }
 
   tick() {
     const elapsedTime = this.clock.getElapsedTime();
@@ -264,7 +275,6 @@ export class ThreeHeader extends React.Component {
   onResize() {
     // Update sizes
     this.sizes.width = window.innerWidth;
-    console.log(`Width: ${this.sizes.width} height: ${this.sizes.height}`);
 
     // Update camera
     this.camera.aspect = this.sizes.width / this.sizes.height;
@@ -278,22 +288,27 @@ export class ThreeHeader extends React.Component {
   }
 
   handleTouchMove(e: TouchEvent) {
+    if (!this.state.isMouseOverCanvas) return;
     const touch = e.touches[0];
     this.mousePosition.x = touch.clientX / this.sizes.width;
     this.mousePosition.y = touch.clientY / this.sizes.height;
   }
 
   handleMouseMove(e: MouseEvent) {
-    this.mousePosition.x = e.clientX / this.sizes.width;
-    this.mousePosition.y = e.clientY / this.sizes.height;
+    if (!this.state.isMouseOverCanvas) return;
+    this.mousePosition.x = e.clientX / (window.innerWidth + 1);
+    this.mousePosition.y = e.clientY / (window.innerHeight + 1);
   }
 
   render() {
     return (
-      <div>
+      <div
+        onMouseEnter={() => this.setState({ isMouseOverCanvas: true })}
+        onMouseLeave={() => this.setState({ isMouseOverCanvas: false })}
+        className={styles.wrapper}
+      >
         <div className={styles.reference}></div>
         <div className={styles.header}>
-          <div className={styles.content}></div>
           <div className={styles.ctas}></div>
           <canvas className={styles.canvas} />
         </div>
