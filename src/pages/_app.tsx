@@ -1,17 +1,19 @@
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import type { AppProps } from "next/app";
+import PageContainer from "../components/PageContainer";
 import "../styles/globals.css";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#0052cc",
+      main: "#FFB3B3",
     },
     secondary: {
-      main: "#adf2ff",
+      main: "#FFDBA4",
     },
+    // third: #FFE9AE
     background: {
-      default: "blue",
+      default: "#C1EFFF",
     },
   },
 });
@@ -19,7 +21,9 @@ const theme = createTheme({
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
+      <PageContainer>
+        <Component {...pageProps} />
+      </PageContainer>
     </ThemeProvider>
   );
 }
