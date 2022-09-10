@@ -7,7 +7,6 @@ import firstVertexShader from "./shaders/firstVertex.vs";
 import fragmentShader from "./shaders/fragment.fs";
 import secondVertexShader from "./shaders/secondVertex.vs";
 
-import { Button } from "@mui/material";
 import "lil-gui/dist/lil-gui.css";
 import styles from "./ThreeHeader.module.css";
 
@@ -28,7 +27,7 @@ export class ThreeHeader extends React.Component {
   renderer: THREE.WebGLRenderer | null = null;
   sizes = {
     width: typeof window !== "undefined" ? window.innerWidth : 1920,
-    height: typeof window !== "undefined" ? window.innerHeight : 1080,
+    height: 500,
   };
   camera = new THREE.PerspectiveCamera(60, this.sizes.width / this.sizes.height, 0.01, 1500);
   clock = new THREE.Clock();
@@ -74,8 +73,8 @@ export class ThreeHeader extends React.Component {
 
     const canvasPattern0 = document.createElement("canvas");
     const canvasPattenSize0 = 1024;
-    canvasPattern0.width = canvasPattenSize0;
-    canvasPattern0.height = canvasPattenSize0;
+    canvasPattern0.width = this.sizes.width;
+    canvasPattern0.height = this.sizes.height;
     const canvasPatternContext1 = canvasPattern0.getContext("2d");
     const circleCount = 100;
     for (let i = 0; i < circleCount; i++) {
@@ -162,8 +161,8 @@ export class ThreeHeader extends React.Component {
     this.camera.position.z = 80;
 
     if (this.renderer) {
-      this.renderer.setSize(window.innerWidth, window.innerHeight);
-      this.renderer.setClearColor(new THREE.Color("rgb(255,255,255)"));
+      this.renderer.setSize(this.sizes.width, this.sizes.height);
+      this.renderer.setClearColor(new THREE.Color("#C1EFFF"));
     }
     this.scene.add(mesh);
     this.scene.add(mesh2);
@@ -265,7 +264,7 @@ export class ThreeHeader extends React.Component {
   onResize() {
     // Update sizes
     this.sizes.width = window.innerWidth;
-    this.sizes.height = window.innerHeight;
+    console.log(`Width: ${this.sizes.width} height: ${this.sizes.height}`);
 
     // Update camera
     this.camera.aspect = this.sizes.width / this.sizes.height;
@@ -292,28 +291,10 @@ export class ThreeHeader extends React.Component {
   render() {
     return (
       <div>
+        <div className={styles.reference}></div>
         <div className={styles.header}>
           <div className={styles.content}></div>
-          <h1 className={styles.heading}>
-            &ldquo;The shipping business will never return to what it was&rdquo;
-          </h1>
-          <div className={styles.ctas}>
-            <Button
-              onClick={() => {
-                console.log("clicked");
-              }}
-            >
-              Helli
-            </Button>
-            <span>or</span>
-            <Button
-              onClick={() => {
-                console.log("clicked");
-              }}
-            >
-              Some
-            </Button>
-          </div>
+          <div className={styles.ctas}></div>
           <canvas className={styles.canvas} />
         </div>
       </div>
