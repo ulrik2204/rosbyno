@@ -7,7 +7,7 @@ type LineProps = {
 export default function Line(props: LineProps) {
   return (
     <Box sx={{ display: "flex", alignItems: "center", gap: "0.5em" }}>
-      <Box sx={{ width: "3em", height: "0.15em", backgroundColor: "primary.main" }}></Box>
+      <Box sx={{ width: "3em", height: "0.2em", backgroundColor: "primary.main" }}></Box>
       {props.children}
     </Box>
   );
