@@ -35,7 +35,7 @@ uniform float u_textureSize;
 uniform float u_opacity;
 
 void main() {
-    vec3 baseColor = rgb(0., 0., 0.);
+    vec3 baseColor = rgb(255., 0., 179.);
     vec3 color = baseColor;
 
     vec2 st = gl_FragCoord.xy / u_dimensions;
@@ -45,16 +45,15 @@ void main() {
     );
 
     /* color = lighten(color, texture2D(u_texture, test).rgb, 1.); */
-    /*
-    inital:
-    color = lighten(color, rgb(255., 0., 150.), (xDistortion + 1.) / 2.);
-    color = lighten(color, rgb(150., 0., 255.), (zDistortion + 1.) / 2.);
-    color = lighten(color, rgb(0., 0., 255.), color2);
+//    inital:
+    color = lighten(color, rgb(255., 219., 164.), (xDistortion + 1.) / 2.);
+    color = lighten(color, rgb(255., 179., 179.), (zDistortion + 1.) / 2.);
+    color = lighten(color, rgb(255., 255., 255.), color2);
 
-    */
-    color = lighten(color, rgb(80., 200., 120.), (xDistortion + 1.) / 2.);
-    color = lighten(color, rgb(80., 94., 57.), (zDistortion + 1.) / 2.);
-    color = lighten(color, rgb(0., 0., 255.), color2);
+
+    // color = lighten(color, rgb(80., 200., 120.), (xDistortion + 1.) / 2.);
+    // color = lighten(color, rgb(80., 94., 57.), (zDistortion + 1.) / 2.);
+    // color = lighten(color, rgb(0., 0., 255.), color2);
 
     gl_FragColor = vec4(color, u_opacity);
 }
