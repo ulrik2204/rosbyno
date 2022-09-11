@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import type { NextPage } from "next";
 import Link from "next/link";
+import IconLink from "../components/IconLink";
 import Line from "../components/Line";
 import Picture from "../components/Picture";
 import { ThreeHeader } from "../components/ThreeHeader";
@@ -43,13 +44,36 @@ const Home: NextPage = () => {
             &ldquo;There&apos;s nothing like the smell of Chai Tea in the morning, it smells like
             quality code&rdquo;
           </Typography>
-          <Link href="/projects">
-            <a>
-              <Button variant="contained" sx={{ marginTop: "3em", padding: "1em 2em" }}>
-                My portfolio
-              </Button>
-            </a>
-          </Link>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              height: "10rem",
+            }}
+          >
+            <Link href="/projects">
+              <a>
+                <Button variant="contained" sx={{ padding: "1em 2em" }}>
+                  My portfolio
+                </Button>
+              </a>
+            </Link>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                width: 180,
+              }}
+            >
+              <IconLink text="GitHub" src="/logos/github.png" href="https://github.com/ulrik2204" />
+              <IconLink
+                text="LinkedIn"
+                src="/logos/linkedin.png"
+                href="https://linkedin.com/in/ulrik-røsby-a2b1251b8"
+              />
+            </Box>
+          </Box>
         </Box>
         <Picture
           priority
