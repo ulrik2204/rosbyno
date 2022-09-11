@@ -17,6 +17,7 @@
     "next": "12.2.5",
     "raw-loader": "^4.0.2",
     "react": "18.2.0",
+    "react-chrono": "^1.19.1",
     "react-dom": "18.2.0",
     "three": "^0.144.0"
   },
