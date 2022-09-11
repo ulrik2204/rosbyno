@@ -9,7 +9,7 @@ type IconLinkProps = {
 export default function IconLink(props: IconLinkProps) {
   return (
     <Box width="64px">
-      <a href="https://github.com/ulrik2204">
+      <a href={props.href}>
         <Box
           sx={{
             display: "flex",
