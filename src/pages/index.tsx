@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import type { NextPage } from "next";
 import Line from "../components/Line";
 import Picture from "../components/Picture";
@@ -23,11 +23,17 @@ const Home: NextPage = () => {
           <Typography variant="h2">Software Engineer</Typography>
         </Box>
         <Picture
-          src="/images/ulrik_seawiz_uten_bg.png"
+          src="/images/ulrik.png"
           alt="Picture of me"
           sx={{ width: 400, height: 550, float: "right" }}
         />
       </Box>
+      <Button variant="contained" color="primary">
+        Hello
+      </Button>
+      <Button variant="contained" color="secondary">
+        Some
+      </Button>
       <ThreeHeader />
     </div>
   );
