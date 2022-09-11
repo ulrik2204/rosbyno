@@ -23,7 +23,7 @@ const Home: NextPage = () => {
       <Box
         sx={{
           display: "flex",
-          height: { xs: 600, lg: "100%" },
+          height: { xs: 700, lg: "100%" },
           flexFlow: { xs: "column-reverse", lg: "row" },
           justifyContent: { xs: "unset", lg: "space-around" },
           alignItems: { xs: "center", lg: "unset" },
@@ -40,16 +40,26 @@ const Home: NextPage = () => {
             Software Engineer
           </Typography>
           <br />
-          <Typography variant="h3" sx={{ marginTop: "0.5em", text: "wrap", width: { md: 500 } }}>
+          <Typography
+            variant="h3"
+            sx={{
+              fontStyle: "italic",
+              marginTop: "0.5em",
+              text: "wrap",
+              width: { md: 500 },
+            }}
+          >
             &ldquo;There&apos;s nothing like the smell of Chai Tea in the morning, it smells like
             quality code&rdquo;
           </Typography>
           <Box
             sx={{
+              marginTop: { xs: "4em", lg: 0 },
               display: "flex",
+              flexFlow: { xs: "column", md: "row" },
               justifyContent: "space-between",
-              alignItems: "center",
-              height: "10rem",
+              alignItems: { xs: "left", lg: "center" },
+              height: "12rem",
             }}
           >
             <Link href="/projects">
