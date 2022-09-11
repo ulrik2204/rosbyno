@@ -17,8 +17,9 @@ const Home: NextPage = () => {
     <Box>
       <Box
         sx={{
+          display: { sm: "none", lg: "block" },
           position: "absolute",
-          height: "100%",
+          height: { xs: "0%", lg: "100%" },
           bgcolor: "secondary.main",
           left: 0,
           right: 0,
@@ -28,13 +29,15 @@ const Home: NextPage = () => {
       <Box
         sx={{
           display: "flex",
-          alignItems: "start",
-          justifyContent: "space-around",
+          height: { xs: 600, lg: "100%" },
+          flexFlow: { xs: "column-reverse", lg: "row" },
+          justifyContent: { xs: "unset", lg: "space-around" },
+          alignItems: { xs: "center", lg: "unset" },
           position: "relative",
           zIndex: 1,
         }}
       >
-        <Box sx={{ marginTop: "8em" }}>
+        <Box sx={{ marginTop: { xs: "1em", lg: "8em" } }}>
           <Line>
             <Typography variant="h3">Hello</Typography>
           </Line>
@@ -60,9 +63,12 @@ const Home: NextPage = () => {
           src="/images/ulrik.png"
           alt="Picture of me"
           sx={{
-            width: 400,
-            height: 550,
-            float: "right",
+            width: { xs: "100vw", lg: 400 },
+            height: { xs: 300, lg: 550 },
+            float: { xs: "left", lg: "right" },
+            backgroundColor: { xs: "secondary.main", lg: "unset" },
+            objectFit: "contain",
+            //objectFit:  {xs: ""}
           }}
         />
       </Box>

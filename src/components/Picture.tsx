@@ -14,7 +14,7 @@ export default function Picture(props: PictureProps): ReactElement {
       sx={[{ position: "relative" }, ...(Array.isArray(props.sx) ? props.sx : [props.sx])]}
       className={props.className}
     >
-      <Image layout="fill" {...props} />
+      <Image layout="fill" objectFit="contain" {...props} />
     </Box>
   );
 }
