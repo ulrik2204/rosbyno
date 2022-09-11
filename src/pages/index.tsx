@@ -5,13 +5,6 @@ import Line from "../components/Line";
 import Picture from "../components/Picture";
 import { ThreeHeader } from "../components/ThreeHeader";
 
-/**
- * Ideas: Button to a projects page
- * Some notes at the front page: ideals
- * Some contact buttons (github, linkedin...) at the frontpage
- * Three.js at the frontpage
- */
-
 const Home: NextPage = () => {
   return (
     <Box>
@@ -67,8 +60,6 @@ const Home: NextPage = () => {
             height: { xs: 300, lg: 550 },
             float: { xs: "left", lg: "right" },
             backgroundColor: { xs: "secondary.main", lg: "unset" },
-            objectFit: "contain",
-            //objectFit:  {xs: ""}
           }}
         />
       </Box>

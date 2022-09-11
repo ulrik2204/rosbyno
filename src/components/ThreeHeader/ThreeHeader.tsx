@@ -186,7 +186,6 @@ export class ThreeHeader extends React.Component<{}, { isCursorOverCanvas: boole
 
   handleTouchMove(e: TouchEvent) {
     if (!this.state.isCursorOverCanvas) return;
-    e.preventDefault();
     const touch = e.touches[0];
     this.mousePosition.x = touch.clientX / this.sizes.width;
     this.mousePosition.y = touch.clientY / this.sizes.height;
