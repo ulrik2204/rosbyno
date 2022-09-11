@@ -59,7 +59,7 @@ const Home: NextPage = () => {
               flexFlow: { xs: "column", md: "row" },
               justifyContent: "space-between",
               alignItems: { xs: "left", lg: "center" },
-              height: "12rem",
+              height: "11rem",
             }}
           >
             <Link href="/projects">
