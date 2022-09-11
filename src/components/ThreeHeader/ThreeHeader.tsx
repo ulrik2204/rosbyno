@@ -33,7 +33,7 @@ export class ThreeHeader extends React.Component<{}, { isCursorOverCanvas: boole
   renderer: THREE.WebGLRenderer | null = null;
   sizes = {
     width: typeof window !== "undefined" ? window.innerWidth : 1920,
-    height: 600,
+    height: 900,
   };
   camera = new THREE.PerspectiveCamera(60, this.sizes.width / this.sizes.height, 0.01, 1500);
   clock = new THREE.Clock();

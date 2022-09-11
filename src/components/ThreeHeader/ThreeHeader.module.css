@@ -1,5 +1,5 @@
 .wrapper {
-  height: 370px;
+  height: 450px;
   overflow: hidden;
   position: absolute;
   left: 0;
@@ -8,7 +8,7 @@
 
 .canvasDiv {
   position: relative;
-  top: -60%;
+  top: -450px;
 }
 
 .canvas {
