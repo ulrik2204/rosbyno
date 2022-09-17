@@ -1,8 +1,9 @@
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { ReactElement, ReactNode, useMemo } from "react";
 import { Chrono } from "react-chrono";
 import { Theme } from "react-chrono/dist/models/Theme";
 import { TimelineItemModel } from "react-chrono/dist/models/TimelineItemModel";
+import { TimelineMode } from "react-chrono/dist/models/TimelineModel";
 
 type ProjectProps = {
   description?: string;
@@ -22,6 +23,9 @@ type ProjectTimelineProps = {
 };
 export default function ProjectsTimeline(props: ProjectTimelineProps): ReactElement {
   const theme = useTheme();
+  const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
+  const mode: TimelineMode = isDesktop ? "VERTICAL_ALTERNATING" : "VERTICAL";
+
   const [chronoItems, timelineContent] = useMemo(() => {
     const chronoItems = props.items.map(
       (item) =>
@@ -44,6 +48,7 @@ export default function ProjectsTimeline(props: ProjectTimelineProps): ReactElem
     );
     return [chronoItems, timelineContent];
   }, [props.items]);
+
   const chronoTheme: Theme = {
     primary: "black",
     secondary: theme.palette.primary.main,
@@ -55,7 +60,7 @@ export default function ProjectsTimeline(props: ProjectTimelineProps): ReactElem
 
   return (
     <Box>
-      <Chrono theme={chronoTheme} items={chronoItems} scrollable mode="VERTICAL_ALTERNATING">
+      <Chrono theme={chronoTheme} items={chronoItems} scrollable mode={mode}>
         {timelineContent.map((projectProps, index) => (
           <Project key={index} {...projectProps} />
         ))}
