@@ -4,7 +4,7 @@ import Link from "next/link";
 import IconLink from "../components/IconLink";
 import Line from "../components/Line";
 import Picture from "../components/Picture";
-import { ThreeHeader } from "../components/ThreeHeader";
+import WaveAnimation from "../components/WaveAnimation";
 
 const Home: NextPage = () => {
   return (
@@ -97,7 +97,7 @@ const Home: NextPage = () => {
           }}
         />
       </Box>
-      <ThreeHeader />
+      <WaveAnimation />
     </Box>
   );
 };

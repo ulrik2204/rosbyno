@@ -1,1 +1,0 @@
-export { ThreeHeader } from "./ThreeHeader";

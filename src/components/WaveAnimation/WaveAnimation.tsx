@@ -8,7 +8,7 @@ import fragmentShader from "./shaders/fragment.fs";
 import secondVertexShader from "./shaders/secondVertex.vs";
 
 import "lil-gui/dist/lil-gui.css";
-import styles from "./ThreeHeader.module.css";
+import styles from "./WaveAnimation.module.css";
 
 /*
  * inspo: https://dailycssdesign.com/67
@@ -22,8 +22,11 @@ import styles from "./ThreeHeader.module.css";
  *
  */
 
-export class ThreeHeader extends React.Component<{}, { isCursorOverCanvas: boolean }> {
-  constructor(props: {}) {
+export default class WaveAnimation extends React.Component<
+  Record<string, never>,
+  { isCursorOverCanvas: boolean }
+> {
+  constructor(props = {}) {
     super(props);
     this.state = {
       isCursorOverCanvas: false,
