@@ -44,6 +44,49 @@ const items: ProjectItem[] = [
     children: <ProjectLinks projectLink="https://seawiz.io" />,
   },
   {
+    timeframe: "October - November 2021",
+    title: "FilmFlokk",
+    titleUrl: "https://github.com/dotClique/project3-it2810",
+    description:
+      "During late autumn of 2021, I worked on bigger group project for creating and signing up for movie events in groups." +
+      "This project introduced me to working on a VM. The project used TS React and Nest.js. I also learned GraphQL, Apollo, Cypress, " +
+      "docker-compose, and NGINX. In addition a React Native mobile frontend using Expo was built for the app as well.",
+    imageUrl: "/logos/filmflokk.svg",
+    children: (
+      <Box>
+        The code for the{" "}
+        <Link href="https://github.com/dotClique/project3-it2810">web application&apos;s</Link> and
+        the{" "}
+        <Link href="https://github.com/dotClique/project4-it2810">
+          React Native mobile frontend
+        </Link>{" "}
+        are on GitHub.
+      </Box>
+    ),
+  },
+  {
+    timeframe: "August - October 2021",
+    title: "Web development projects",
+    titleUrl: "https://project2-it2810.rosby.no",
+    description:
+      "During autumn of 2021, I worked on several web development projects, " +
+      "some alone and some in a group. " +
+      "These projects refined my skills in pure JavaScript, TypeScript and React.",
+    imageUrl: "/logos/gitlab.png",
+    children: (
+      <Box>
+        The first project was an individual pure JS project and is{" "}
+        <Link href="https://project1-it2810.rosby.no">deployed</Link> and on{" "}
+        <Link href="https://github.com/ulrik2204/project1-it2810">GitHub</Link>.
+        <br />
+        The second project was a group project pure JS project and is{" "}
+        <Link href="https://project2-it2810.rosby.no">deployed</Link> and on{" "}
+        <Link href="https://github.com/dotClique/project2-it2810">github</Link>.
+        <br />
+      </Box>
+    ),
+  },
+  {
     timeframe: "June - August 2021",
     title: "ComboStats",
     titleUrl: "https://combostats.rosby.no",
@@ -93,6 +136,10 @@ export default function Projects() {
       <Typography variant="h1" sx={{ marginTop: "4rem", marginBottom: "2rem" }}>
         My projects
       </Typography>
+      <Typography sx={{ marginBottom: "2rem" }}>
+        Being a 4th year Computer Science student at NTNU, I have the following projects under my
+        belt:
+      </Typography>
       <ProjectsTimeline items={items} />
     </Box>
   );
@@ -119,7 +166,10 @@ function ProjectLinks(props: ProjectLinksProps) {
           <>
             Code is on{" "}
             {!props.githubLinkBackend ? (
-              <Link href={props.githubLink1}>GitHub</Link>
+              <>
+                <Link href={props.githubLink1}>GitHub</Link>
+                {"."}
+              </>
             ) : (
               <>
                 GitHub, for both the <Link href={props.githubLink1}>frontend</Link> and{" "}
