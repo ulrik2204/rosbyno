@@ -11,27 +11,14 @@ const Home: NextPage = () => {
     <Box>
       <Box
         sx={{
-          display: { sm: "none", lg: "block" },
-          position: "absolute",
-          height: { xs: "0%", lg: "100%" },
-          // bgcolor: "secondary.main",
-          left: 0,
-          right: 0,
-          zIndex: 0,
-        }}
-      ></Box>
-      <Box
-        sx={{
           display: "flex",
-          height: { xs: 700, lg: "100%" },
           flexFlow: { xs: "column-reverse", lg: "row" },
           justifyContent: { xs: "unset", lg: "space-around" },
           alignItems: { xs: "center", lg: "unset" },
           position: "relative",
-          zIndex: 1,
         }}
       >
-        <Box sx={{ marginTop: { xs: "1em", lg: "8em" } }}>
+        <Box sx={{ marginTop: { xs: "1em", lg: "5em" } }}>
           <Line>
             <Typography variant="h3">Hello</Typography>
           </Line>

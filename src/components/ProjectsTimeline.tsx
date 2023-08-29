@@ -14,7 +14,6 @@ export type ProjectItem = {
   title: string;
   description: string;
   timeframe: string;
-  titleUrl?: string;
   imageUrl: string;
   subtitle?: string;
   children?: ReactNode;
@@ -30,25 +29,24 @@ export default function ProjectsTimeline(props: ProjectTimelineProps): ReactElem
   const mode: TimelineMode = isDesktop ? "VERTICAL_ALTERNATING" : "VERTICAL";
 
   const [chronoItems, timelineContent] = useMemo(() => {
-    const chronoItems = props.items.map(
-      (item) =>
-        ({
-          title: item.timeframe,
-          subtitle: item.subtitle,
-          cardTitle: item.title,
-          url: item.titleUrl,
-          media: {
-            type: "IMAGE",
-            name: `Image for ${item.title}`,
-            source: {
-              url: item.imageUrl,
-            },
+    const chronoItems = props.items.map((item) => {
+      return {
+        title: item.timeframe,
+        cardSubtitle: item.subtitle,
+        cardTitle: item.title,
+        media: {
+          type: "IMAGE",
+          name: `Image for ${item.title}`,
+          source: {
+            url: item.imageUrl,
           },
-        } as TimelineItemModel),
-    );
-    const timelineContent = props.items.map(
-      (item) => ({ description: item.description, children: item.children } as ProjectProps),
-    );
+        },
+      } as TimelineItemModel;
+    });
+    const timelineContent: ProjectProps[] = props.items.map((item) => ({
+      description: item.description,
+      children: item.children,
+    }));
     return [chronoItems, timelineContent];
   }, [props.items]);
 
@@ -56,14 +54,23 @@ export default function ProjectsTimeline(props: ProjectTimelineProps): ReactElem
     primary: "black",
     secondary: theme.palette.primary.main,
     cardBgColor: theme.palette.secondary.main,
-    cardForeColor: "black",
     titleColor: "black",
-    titleColorActive: "black",
+    cardTitleColor: "black",
+    textColor: "black",
+    titleColorActive: "blac",
   };
 
   return (
     <Box>
-      <Chrono theme={chronoTheme} items={chronoItems} scrollable mode={mode}>
+      <Chrono
+        theme={chronoTheme}
+        items={chronoItems}
+        scrollable
+        mediaSettings={{ imageFit: "contain" }}
+        mediaHeight={300}
+        mode={mode}
+        hideControls={true}
+      >
         {timelineContent.map((projectProps, index) => (
           <Project key={index} {...projectProps} />
         ))}

@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Link } from "@mui/material";
 import Image from "next/image";
 
 type IconLinkProps = {
@@ -9,7 +9,7 @@ type IconLinkProps = {
 export default function IconLink(props: IconLinkProps) {
   return (
     <Box width="64px">
-      <a href={props.href}>
+      <Link href={props.href} style={{ textDecoration: "none", color: "inherit" }}>
         <Box
           sx={{
             display: "flex",
@@ -21,7 +21,7 @@ export default function IconLink(props: IconLinkProps) {
           <Image src={props.src} alt="" objectFit="contain" layout="fixed" width={64} height={64} />
           <Typography>{props.text}</Typography>
         </Box>
-      </a>
+      </Link>
     </Box>
   );
 }
