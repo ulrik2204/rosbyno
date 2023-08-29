@@ -1,14 +1,21 @@
 import { Box, Typography } from "@mui/material";
-import ProjectsTimeline, { ProjectItem } from "../components/ProjectsTimeline";
+import dynamic from "next/dynamic";
+import { ProjectItem } from "../components/ProjectsTimeline";
 import ProjectLinks from "../components/ProjectLinks";
+
+const ProjectsTimeline = dynamic(() => import("../components/ProjectsTimeline"), { ssr: false });
 
 const items: ProjectItem[] = [
   {
     timeframe: "June - August 2023",
     title: "Oda Internship",
-    description:
-      "Worked on a project with 7 other people where the goal was to improve product data quality " +
-      "at Oda using information extracted from images.",
+    description: `Worked on a project with 7 other people where the goal was to improve product data quality
+      at Oda using information extracted from product images. Here we focused on working in a cross-functional
+      team of designers, data scientists and software engineers. Although my role was primarily as a software 
+      developer, we also did a Google Design Sprint to create a prototype of the product, did process
+      modeling using BPMN diagrams and created an application which integrated with their already existing 
+      system to provide suggestion for product data based on images.
+      `,
     imageUrl: "/logos/oda.png",
   },
   {
@@ -44,11 +51,12 @@ const items: ProjectItem[] = [
       I have often taken a position as a teacher's assistant in courses at 
       NTNU during the fall semester.
       In the fall semester of 2021 I was a teacher's assistant in the course 
-      TDT4109 Introduction to Information Technology. Here I was responsible for grading
+      TDT4109 Information Technology, Introduction. Here I was responsible for grading
       assignments and answering questions from students.
       In the fall semester of 2022 I was teacher's assistant in the course IT2810 Web Development
       where I was responsible for answering questions from students about React, TypeScript, GraphQL 
-      and setup of the development environment.
+      and setup of the development environment. I continued as a teacher's assistant in IT2810 in
+      the fall semester of 2023.
       `,
     imageUrl: "/logos/ntnu.png",
     children: (
@@ -60,7 +68,7 @@ const items: ProjectItem[] = [
   },
 ];
 
-export default function Work() {
+export default function Experience() {
   return (
     <Box>
       <Typography variant="h1" sx={{ marginTop: "4rem", marginBottom: "2rem" }}>

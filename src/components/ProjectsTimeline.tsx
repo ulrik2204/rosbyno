@@ -57,7 +57,7 @@ export default function ProjectsTimeline(props: ProjectTimelineProps): ReactElem
     titleColor: "black",
     cardTitleColor: "black",
     textColor: "black",
-    titleColorActive: "blac",
+    titleColorActive: "black",
   };
 
   return (
@@ -67,7 +67,6 @@ export default function ProjectsTimeline(props: ProjectTimelineProps): ReactElem
         items={chronoItems}
         scrollable
         mediaSettings={{ imageFit: "contain" }}
-        mediaHeight={300}
         mode={mode}
         hideControls={true}
       >
@@ -81,7 +80,7 @@ export default function ProjectsTimeline(props: ProjectTimelineProps): ReactElem
 
 function Project(props: ProjectProps) {
   return (
-    <Box width="100%">
+    <Box width="100%" sx={{ marginBottom: "2rem" }}>
       <Typography variant="body1">{props.description}</Typography>
       {props.children}
     </Box>

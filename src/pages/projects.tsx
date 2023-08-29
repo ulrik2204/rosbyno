@@ -1,6 +1,9 @@
 import { Box, Typography } from "@mui/material";
-import ProjectsTimeline, { ProjectItem } from "../components/ProjectsTimeline";
+import { ProjectItem } from "../components/ProjectsTimeline";
 import ProjectLinks from "../components/ProjectLinks";
+import dynamic from "next/dynamic";
+
+const ProjectsTimeline = dynamic(() => import("../components/ProjectsTimeline"), { ssr: false });
 
 const items: ProjectItem[] = [
   {
