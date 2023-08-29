@@ -16,9 +16,10 @@ const Home: NextPage = () => {
           justifyContent: { xs: "unset", lg: "space-around" },
           alignItems: { xs: "center", lg: "unset" },
           position: "relative",
+          // height: { xs: "40em", lg: "unset" },
         }}
       >
-        <Box sx={{ marginTop: { xs: "1em", lg: "5em" } }}>
+        <Box sx={{ marginTop: { xs: "2em", lg: "5em" } }}>
           <Line>
             <Typography variant="h3">Hello</Typography>
           </Line>
@@ -39,11 +40,11 @@ const Home: NextPage = () => {
           </Typography>
           <Box
             sx={{
-              marginTop: { xs: "2em" },
+              marginTop: "2em",
               display: "flex",
               flexFlow: { xs: "column", row: "row" },
               justifyContent: "space-between",
-              height: "11rem",
+              height: "9rem",
             }}
           >
             <Box
@@ -51,19 +52,19 @@ const Home: NextPage = () => {
                 display: "flex",
                 flexFlow: "row",
                 justifyContent: "space-between",
-                width: "22rem",
+                width: "18rem",
               }}
             >
               <Link href="/projects">
                 <a>
-                  <Button variant="contained" sx={{ padding: "1em 2em" }} startIcon="🖼️">
+                  <Button variant="contained" sx={{ padding: "0.5em 1em" }} startIcon="📘">
                     Portfolio
                   </Button>
                 </a>
               </Link>
               <Link href="/experience">
                 <a>
-                  <Button variant="contained" sx={{ padding: "1em 2em" }} startIcon="👷‍♂️">
+                  <Button variant="contained" sx={{ padding: "0.5em 1em" }} startIcon="👷‍♂️">
                     Experience
                   </Button>
                 </a>
@@ -74,7 +75,7 @@ const Home: NextPage = () => {
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
-                width: "10rem",
+                width: "8rem",
               }}
             >
               <IconLink text="GitHub" src="/logos/github.png" href="https://github.com/ulrik2204" />
@@ -88,10 +89,13 @@ const Home: NextPage = () => {
         </Box>
         <Box
           sx={{
-            height: "auto",
+            height: { xs: "100%", lg: "auto" },
+            width: { xs: "100%", lg: "unset" },
             display: "flex",
             flexFlow: "column",
             justifyContent: "center",
+            alignItems: "center",
+            marginTop: { xs: "1em", lg: "unset" },
           }}
         >
           <Picture
@@ -99,9 +103,9 @@ const Home: NextPage = () => {
             src="/images/ulrik.png"
             alt="Picture of me"
             sx={{
-              width: { xs: 250, lg: 450 },
-              height: { xs: 250, lg: 450 },
-              float: { xs: "left", lg: "right" },
+              width: { xs: 180, lg: 420 },
+              height: { xs: 180, lg: 420 },
+              float: { xs: "unset", lg: "right" },
               backgroundColor: { xs: "secondary.main" },
               borderRadius: "50%",
               overflow: "hidden",

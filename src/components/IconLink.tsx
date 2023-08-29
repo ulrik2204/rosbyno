@@ -8,17 +8,17 @@ type IconLinkProps = {
 };
 export default function IconLink(props: IconLinkProps) {
   return (
-    <Box width="64px">
+    <Box width="48px">
       <Link href={props.href} style={{ textDecoration: "none", color: "inherit" }}>
         <Box
           sx={{
             display: "flex",
             flexFlow: "column",
             alignItems: "center",
-            width: "64px",
+            width: "48px",
           }}
         >
-          <Image src={props.src} alt="" objectFit="contain" layout="fixed" width={64} height={64} />
+          <Image src={props.src} alt="" objectFit="contain" layout="fixed" width={48} height={48} />
           <Typography>{props.text}</Typography>
         </Box>
       </Link>
