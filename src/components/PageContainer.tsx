@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import { ReactElement, ReactNode } from "react";
+import Header from "./Header";
 
 type PageContainerProps = {
   children?: ReactNode;
@@ -15,7 +16,8 @@ export default function PageContainer(props: PageContainerProps): ReactElement {
         minHeight: "100vh",
       }}
     >
-      <Box sx={{ width: { xs: "95%", md: "70%" } }}>{props.children}</Box>
+      <Header />
+      <Box sx={{ width: { xs: "95%", md: "80%" } }}>{props.children}</Box>
     </Box>
   );
 }

@@ -9,6 +9,7 @@ type ProjectProps = {
   description?: string;
   children?: ReactNode;
 };
+
 export type ProjectItem = {
   title: string;
   description: string;
@@ -18,9 +19,11 @@ export type ProjectItem = {
   subtitle?: string;
   children?: ReactNode;
 };
+
 type ProjectTimelineProps = {
   items: ProjectItem[];
 };
+
 export default function ProjectsTimeline(props: ProjectTimelineProps): ReactElement {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));

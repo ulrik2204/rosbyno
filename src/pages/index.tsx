@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography, IconButton } from "@mui/material";
 import type { NextPage } from "next";
 import Link from "next/link";
 import IconLink from "../components/IconLink";
@@ -14,7 +14,7 @@ const Home: NextPage = () => {
           display: { sm: "none", lg: "block" },
           position: "absolute",
           height: { xs: "0%", lg: "100%" },
-          bgcolor: "secondary.main",
+          // bgcolor: "secondary.main",
           left: 0,
           right: 0,
           zIndex: 0,
@@ -36,17 +36,15 @@ const Home: NextPage = () => {
             <Typography variant="h3">Hello</Typography>
           </Line>
           <Typography variant="h1">Ulrik Røsby</Typography>
-          <Typography variant="h2" marginTop="0.3em">
-            Software Engineer
-          </Typography>
+          <Typography variant="h3">Software Engineer</Typography>
           <br />
           <Typography
-            variant="h3"
+            variant="h4"
             sx={{
               fontStyle: "italic",
-              marginTop: "0.5em",
-              text: "wrap",
-              width: { md: 500 },
+              marginTop: "0.3em",
+              width: "90%",
+              wordWrap: "break-word",
             }}
           >
             &ldquo;There&apos;s nothing like the smell of Chai Tea in the morning, it smells like
@@ -54,26 +52,42 @@ const Home: NextPage = () => {
           </Typography>
           <Box
             sx={{
-              marginTop: { xs: "4em", lg: 0 },
+              marginTop: { xs: "2em" },
               display: "flex",
-              flexFlow: { xs: "column", md: "row" },
+              flexFlow: { xs: "column", row: "row" },
               justifyContent: "space-between",
-              alignItems: { xs: "left", lg: "center" },
               height: "11rem",
             }}
           >
-            <Link href="/projects">
-              <a>
-                <Button variant="contained" sx={{ padding: "1em 2em" }}>
-                  My portfolio
-                </Button>
-              </a>
-            </Link>
+            <Box
+              sx={{
+                display: "flex",
+                flexFlow: "row",
+                justifyContent: "space-between",
+                width: "22rem",
+              }}
+            >
+              <Link href="/projects">
+                <a>
+                  <Button variant="contained" sx={{ padding: "1em 2em" }} startIcon="🖼️">
+                    Portfolio
+                  </Button>
+                </a>
+              </Link>
+              <Link href="/experience">
+                <a>
+                  <Button variant="contained" sx={{ padding: "1em 2em" }} startIcon="👷‍♂️">
+                    Experience
+                  </Button>
+                </a>
+              </Link>
+            </Box>
+
             <Box
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
-                width: 180,
+                width: "10rem",
               }}
             >
               <IconLink text="GitHub" src="/logos/github.png" href="https://github.com/ulrik2204" />
@@ -85,17 +99,28 @@ const Home: NextPage = () => {
             </Box>
           </Box>
         </Box>
-        <Picture
-          priority
-          src="/images/ulrik.png"
-          alt="Picture of me"
+        <Box
           sx={{
-            width: { xs: "100vw", lg: 400 },
-            height: { xs: 300, lg: 550 },
-            float: { xs: "left", lg: "right" },
-            backgroundColor: { xs: "secondary.main", lg: "unset" },
+            height: "auto",
+            display: "flex",
+            flexFlow: "column",
+            justifyContent: "center",
           }}
-        />
+        >
+          <Picture
+            priority
+            src="/images/ulrik.png"
+            alt="Picture of me"
+            sx={{
+              width: { xs: 250, lg: 450 },
+              height: { xs: 250, lg: 450 },
+              float: { xs: "left", lg: "right" },
+              backgroundColor: { xs: "secondary.main" },
+              borderRadius: "50%",
+              overflow: "hidden",
+            }}
+          />
+        </Box>
       </Box>
       <WaveAnimation />
     </Box>

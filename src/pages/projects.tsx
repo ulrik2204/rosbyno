@@ -3,6 +3,14 @@ import ProjectsTimeline, { ProjectItem } from "../components/ProjectsTimeline";
 
 const items: ProjectItem[] = [
   {
+    timeframe: "June - August 2023",
+    title: "Oda Internship",
+    description:
+      "Worked on a project with 7 other people where the goal was to improve product data quality " +
+      "at Oda using information extracted from images.",
+    imageUrl: "/logos/oda.png",
+  },
+  {
     timeframe: "June - August 2022",
     title: "NAV IT Internship",
     description:
@@ -135,10 +143,6 @@ export default function Projects() {
     <Box>
       <Typography variant="h1" sx={{ marginTop: "4rem", marginBottom: "2rem" }}>
         My projects
-      </Typography>
-      <Typography sx={{ marginBottom: "2rem" }}>
-        Being a 4th year Computer Science student at NTNU, I have the following projects under my
-        belt:
       </Typography>
       <ProjectsTimeline items={items} />
     </Box>
