@@ -17,6 +17,12 @@ const items: ProjectItem[] = [
       system to provide suggestion for product data based on images.
       `,
     imageUrl: "/logos/oda.png",
+    children: (
+      <Box>
+        See my <a href="https://www.linkedin.com/in/ulrik-r%C3%B8sby-a2b1251b8/">LinkedIn</a>{" "}
+        profile recommendations from this internship.
+      </Box>
+    ),
   },
   {
     timeframe: "June - August 2022",
