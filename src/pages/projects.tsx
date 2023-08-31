@@ -9,7 +9,7 @@ const ProjectsTimeline = dynamic(() => import("../components/ProjectsTimeline"),
 
 const items: ProjectItem[] = [
   {
-    timeframe: "January - June 2022",
+    timeframe: "Jan - Jun 2022",
     title: "Emojify",
     description: `I was a project leader in Cogito NTNU for the project "Emojify". In this project
     a group of 4 students created a program that suggested emojis to sentences. This was done using
@@ -19,7 +19,7 @@ const items: ProjectItem[] = [
     children: <ProjectLinks githubLink1="https://github.com/CogitoNTNU/emojify" />,
   },
   {
-    timeframe: "January - June 2022",
+    timeframe: "Jan - Jun 2022",
     title: "Acoustic based vehicle detection and classification",
     description: `In the course TDT4290 Customer Driven Project at NTNU, I was part of a group of 5 students
     where we did a feasibility study for the company Q-Free on how much information you could extract from 
@@ -32,7 +32,7 @@ const items: ProjectItem[] = [
     children: <ProjectLinks githubLink1="https://github.com/erlandbo/TDT4290/tree/main" />,
   },
   {
-    timeframe: "September - November 2022",
+    timeframe: "Sep - Nov 2022",
     title: "Living Painting",
     description: `I was a project participant in Cogito NTNU for the project "Living Painting". 
       In this project a group of 8 students created program that could produce a living 
@@ -57,7 +57,7 @@ const items: ProjectItem[] = [
     ),
   },
   {
-    timeframe: "January - June 2022",
+    timeframe: "Jan - Jun 2022",
     title: "Battlegoose",
     description:
       "Created a LibGDX game with 5 other people in the course Software Architecture at NTNU.",
@@ -70,12 +70,12 @@ const items: ProjectItem[] = [
     ),
   },
   {
-    timeframe: "June - August 2021",
+    timeframe: "Jun - Aug 2021",
     title: "ComboStats",
     description:
       "During the summer 2022, I worked on a project alone to estimate the " +
       "probability of drawing items in a population by drawing a lot of samples. " +
-      "This project refined by skills in TypeScript and React.",
+      "This project refined my skills in TypeScript and React.",
     imageUrl: "https://combostats.rosby.no/ComboStatsRoundedLogo.png",
     children: (
       <ProjectLinks

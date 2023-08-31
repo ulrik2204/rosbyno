@@ -7,7 +7,7 @@ const ProjectsTimeline = dynamic(() => import("../components/ProjectsTimeline"),
 
 const items: ProjectItem[] = [
   {
-    timeframe: "June - August 2023",
+    timeframe: "Jun - Aug 2023",
     title: "Oda Internship",
     description: `Worked on a project with 7 other people where the goal was to improve product data quality
       at Oda using information extracted from product images. Here we focused on working in a cross-functional
@@ -25,7 +25,7 @@ const items: ProjectItem[] = [
     ),
   },
   {
-    timeframe: "June - August 2022",
+    timeframe: "Jun - Aug 2022",
     title: "NAV IT Internship",
     description:
       "Worked on a project with 3 people to create a website for bulk " +
@@ -40,7 +40,7 @@ const items: ProjectItem[] = [
     ),
   },
   {
-    timeframe: "January 2022 - ongoing",
+    timeframe: "Jan 2022 - present",
     title: "SeaWiz",
     description:
       "Currently working in the startup SeaWiz to create a platform " +
@@ -51,7 +51,7 @@ const items: ProjectItem[] = [
     children: <ProjectLinks projectLink="https://seawiz.io" />,
   },
   {
-    timeframe: "August - December 2021, 2022, 2023",
+    timeframe: "Aug - Dec 2021, 2022, 2023",
     title: "Teacher's assistant",
     description: `
       I have often taken a position as a teacher's assistant in courses at 
